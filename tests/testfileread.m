@@ -64,7 +64,7 @@ if testFlag==1 && simulation==1                                             % Te
     assert(~any(index(1:3)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
     assert(~any(index(4:6)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
     assert(~any(index(7:9)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    assert(any(index(10:12)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
     assert(~any(index(12:15)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
     
     
