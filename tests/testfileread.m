@@ -61,21 +61,12 @@ if testFlag==1 && simulation==1                                             % Te
         end
     end                                                                     
     
-    if any(index(1:3)==1)
-        fprintf('Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if any(index(4:6)==1)
-        fprintf('Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if any(index(7:9)==1)
-        fprintf('Inacceptable results of test 1 with uniform h refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if any(index(10:12)==1)
-        fprintf('Inacceptable results of test 1 with uniform h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if any(index(12:15)==1)
-        fprintf('Inacceptable results of test 1 with uniform h refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~any(index(1:3)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~any(index(4:6)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~any(index(7:9)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(12:15)==1),'Inacceptable results of test 1 with uniform h refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -102,21 +93,12 @@ elseif testFlag==1 && simulation==2
         end
     end
     
-    if any(index(1:3)==1)
-        fprintf('Inacceptable results of test 1 with uniform p refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if any(index(4:6)==1)
-        fprintf('Inacceptable results of test 1 with uniform p refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if any(index(7:9)==1)
-        fprintf('Inacceptable results of test 1 with uniform p refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if any(index(10:12)==1)
-        fprintf('Inacceptable results of test 1 with uniform p refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if any(index(12:15)==1)
-        fprintf('Inacceptable results of test 1 with uniform p refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~any(index(1:3)==1),'Inacceptable results of test 1 with uniform p refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~any(index(4:6)==1),'Inacceptable results of test 1 with uniform p refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~any(index(7:9)==1),'Inacceptable results of test 1 with uniform p refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with uniform p refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(12:15)==1),'Inacceptable results of test 1 with uniform p refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -144,25 +126,12 @@ elseif testFlag==1 && simulation==3
         end
     end
     
-    if any(index(1:3)==1)
-        fprintf('Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if any(index(4:6)==1)
-        fprintf('Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if any(index(7:9)==1)
-        fprintf('Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if any(index(10:12)==1)
-        fprintf('Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if any(index(12:15)==1)
-        fprintf('Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
-    if any(index==1)
-        fprintf('Simulation paused to highlight discrepencies between expected and calculated values. Press any key to continue\n');
-        pause
-    end
+    assert(~any(index(1:3)==1),'Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~any(index(4:6)==1),'Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~any(index(7:9)==1),'Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(12:15)==1),'Inacceptable results of test 1 with adaptive h refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 elseif testFlag==1 && simulation==4
@@ -188,21 +157,12 @@ elseif testFlag==1 && simulation==4
         end
     end
     
-    if any(index(1:3)==1)
-        fprintf('Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if any(index(4:6)==1)
-        fprintf('Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if any(index(7:9)==1)
-        fprintf('Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if any(index(10:12)==1)
-        fprintf('Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if any(index(12:15)==1)
-        fprintf('Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~any(index(1:3)==1),'Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~any(index(4:6)==1),'Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~any(index(7:9)==1),'Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(12:15)==1),'Inacceptable results of test 1 with adaptive p refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 elseif testFlag==1 && simulation==5
@@ -228,21 +188,12 @@ elseif testFlag==1 && simulation==5
         end
     end
     
-    if any(index(1:3)==1)
-        fprintf('Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if any(index(4:6)==1)
-        fprintf('Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if any(index(7:9)==1)
-        fprintf('Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if any(index(10:12)==1)
-        fprintf('Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if any(index(12:15)==1)
-        fprintf('Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~any(index(1:3)==1),'Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~any(index(4:6)==1),'Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~any(index(7:9)==1),'Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~any(index(10:12)==1),'Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~any(index(12:15)==1),'Inacceptable results of test 1 with adaptive hp refinement.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 elseif testFlag==2
@@ -267,21 +218,12 @@ elseif testFlag==2
         end
     end
     
-%     if index(1)==1
-        assert(index(1)==1,'Inacceptable results of test 2.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-%     end
-    if index(2)==1
-%         fprintf(index(2)==1,'Inacceptable results of test 2.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if index(3)==1
-        fprintf('Inacceptable results of test 2.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if index(4)==1
-        fprintf('Inacceptable results of test 2.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if index(5)==1
-        fprintf('Inacceptable results of test 2.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~index(1)==1,'Inacceptable results of test 2.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~index(2)==1,'Inacceptable results of test 2.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~index(3)==1,'Inacceptable results of test 2.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~index(4)==1,'Inacceptable results of test 2.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~index(5)==1,'Inacceptable results of test 2.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 elseif testFlag==3
@@ -307,21 +249,12 @@ elseif testFlag==3
         end
     end
     
-    if index(1)==1
-        fprintf('Inacceptable results of test 3.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if index(2)==1
-        fprintf('Inacceptable results of test 3.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if index(3)==1
-        fprintf('Inacceptable results of test 3.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if index(4)==1
-        fprintf('Inacceptable results of test 3.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if index(5)==1
-        fprintf('Inacceptable results of test 3.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~index(1)==1,'Inacceptable results of test 3.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~index(2)==1,'Inacceptable results of test 3.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~index(3)==1,'Inacceptable results of test 3.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~index(4)==1,'Inacceptable results of test 3.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~index(5)==1,'Inacceptable results of test 3.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
     
     %--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 elseif testFlag==4
@@ -347,21 +280,12 @@ elseif testFlag==4
         end
     end
     
-    if index(1)==1
-        fprintf('Inacceptable results of test 4.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
-    end
-    if index(2)==1
-        fprintf('Inacceptable results of test 4.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
-    end
-    if index(3)==1
-        fprintf('Inacceptable results of test 4.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
-    end
-    if index(4)==1
-        fprintf('Inacceptable results of test 4.Difference between computed values of ndof and expected values exceed tolerance.\n');
-    end
-    if index(5)==1
-        fprintf('Inacceptable results of test 4.Difference between computed values of number of elements and expected values exceed tolerance.\n');
-    end
+    assert(~index(1)==1,'Inacceptable results of test 4.Difference between computed values of error in the DG norm and expected values exceed tolerance.\n');
+    assert(~index(2)==1,'Inacceptable results of test 4.Difference between computed values of error in the L2 norm and expected values exceed tolerance.\n');
+    assert(~index(3)==1,'Inacceptable results of test 4.Difference between computed values of the error estimate and expected values exceed tolerance.\n');
+    assert(~index(4)==1,'Inacceptable results of test 4.Difference between computed values of ndof and expected values exceed tolerance.\n');
+    assert(~index(5)==1,'Inacceptable results of test 4.Difference between computed values of number of elements and expected values exceed tolerance.\n');
+    
 end
 
 end

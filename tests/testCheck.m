@@ -7,5 +7,8 @@ function [passcheck]=testCheck(simulation,sim_end,testFlag,Er,DG,L2,ndof,nels,pa
         testProblemCheck(simulation,sim_end,testFlag,Er,DG,L2,ndof,nels);
         [passcheckNew]=testfileread(DG,L2,Er,ndof,nels,testFlag,simulation,passcheck);
         passcheck=passcheck+passcheckNew;
+        if passcheck==8
+         fprintf('All tests passed\n');
+        end
 end
         

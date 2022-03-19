@@ -21,8 +21,7 @@
 function path_add
 addpath('adaptivity');
 addpath('boundary_conditions'); 
-addpath('error_calculation');
-addpath('main'); 
+addpath('error_calculation'); 
 addpath('mesh_generation');
 addpath('mesh_generation/square');
 addpath(genpath('Mesh2d'));
