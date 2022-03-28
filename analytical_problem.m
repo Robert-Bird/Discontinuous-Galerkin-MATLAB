@@ -1,6 +1,7 @@
+% Description: Script runs a range of finite element problems with a comparison to analytical solutions (see documentation)
+
 % Author: Thomas Wiltshire
 % Date:   15/08/2018
-% Description: Function to run a analytical problem (see documentation)
 % Top tier of program. The user first specifies the problem
 % type: either a problem with an anlytical solution, a problem with a
 % non-analytical solution. This information is used to define the problem 
