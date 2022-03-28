@@ -1,8 +1,8 @@
-% Description: Script solves linear elasticity with SIPG and is compared to an analytical solution (see documentation)
-
+% Function to run example problem 2 (see documentation)
+%
 % Author: Thomas Wiltshire
 % Date:   15/08/2018
-% Top tier of program. The user first specifies the problem
+% Description: Top tier of program. The user first specifies the problem
 % type: either a problem with an anlytical solution, a problem with a
 % non-analytical solution. This information is used to define the problem 
 % geometry, boundary conditions to be imposed, type of mesh adaptivity to 
@@ -35,15 +35,15 @@
 exit1 = 0;
 while exit1==0
     % Problem definition --------------------------------------------------
-    [node,edge,BC,delta2,delta1,loop_end,av_bc,sim_end,E,v]=...            % Problem definition for analytical problems
-        analytical_problem_generator;
+    [node,edge,BC,delta2,delta1,loop_end,av_bc,sim_end,E,v]=...        % Problem definition for analytical problems
+        analytical_problem_2_generator;
 
     % Simulation while loop -----------------------------------------------
     for simulation = 1:sim_end
         DG=zeros(size(sim_end));L2=DG; Er=DG;ndof=DG;                      % Reset size of test data arrays
         
         % 1: Generating Mesh ----------------------------------------------
-        [coord,etpl,etpl_face] = seed_mesh_square(node,edge,BC);           % Generate mesh
+        [coord,etpl,etpl_face] = Lmesh(node,edge,BC);             % Generate mesh
         
         boundary_condition_check(etpl,etpl_face,coord);                    % Plot applied boundary conditions
         
@@ -141,8 +141,3 @@ while exit1==0
     exit1=1;
     
 end
-
-
-
-
-

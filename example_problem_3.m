@@ -1,8 +1,8 @@
-% Description: Script solves linear elasticity with SIPG and is compared to an analytical solution (see documentation)
-
+% Function to run example problem 3 (see documentation)
+%
 % Author: Thomas Wiltshire
 % Date:   15/08/2018
-% Top tier of program. The user first specifies the problem
+% Description: Top tier of program. The user first specifies the problem
 % type: either a problem with an anlytical solution, a problem with a
 % non-analytical solution. This information is used to define the problem 
 % geometry, boundary conditions to be imposed, type of mesh adaptivity to 
@@ -35,15 +35,15 @@
 exit1 = 0;
 while exit1==0
     % Problem definition --------------------------------------------------
-    [node,edge,BC,delta2,delta1,loop_end,av_bc,sim_end,E,v]=...            % Problem definition for analytical problems
-        analytical_problem_generator;
+    [node,edge,BC,delta2,delta1,loop_end,av_bc,sim_end,E,v]=...        % Problem definition for analytical problems
+        nonanalytical_problem_3_generator;
 
     % Simulation while loop -----------------------------------------------
     for simulation = 1:sim_end
         DG=zeros(size(sim_end));L2=DG; Er=DG;ndof=DG;                      % Reset size of test data arrays
         
         % 1: Generating Mesh ----------------------------------------------
-        [coord,etpl,etpl_face] = seed_mesh_square(node,edge,BC);           % Generate mesh
+        [coord,etpl,etpl_face] = crackmesh(node,edge,BC);             % Generate mesh
         
         boundary_condition_check(etpl,etpl_face,coord);                    % Plot applied boundary conditions
         
@@ -70,7 +70,7 @@ while exit1==0
             stiff_time=tic;fprintf('Force calculation')
             F_Dirichlet        = force_integration_Dirichlet(etpl,etpl_face,ed,coord,E,v);
             F_Dirichlet_Neuman = force_integration_Dirichlet_Neumann(etpl,etpl_face,ed,coord,E,v);
-            F_Neumann          = force_integration_Neumann_analytical(etpl,etpl_face,ed,coord);
+            F_Neumann          = force_integration_Neumann_nonanalytical(etpl,etpl_face,ed,coord);
             F_Body             = force_integration_vol(etpl,ed,coord,E,v);
             F=F_Body+F_Neumann+F_Dirichlet+F_Dirichlet_Neuman;
 
@@ -84,14 +84,14 @@ while exit1==0
             %6: Error estimation-------------------------------------------
             
             % Error estimator ---------------------------------------------
-            [El_Err,Er(loop_count)]=error_calc_ele_analytical(u,etpl,ed,etpl_face,coord,E,v); 
+            [El_Err,Er(loop_count)]=error_calc_ele_nonanalytical(u,etpl,ed,etpl_face,coord,E,v); 
             fprintf('Er error \t\t        %d\n',Er(loop_count))
             
             % Error in L2 norm --------------------------------------------
-            [L2(loop_count)] = L2_norm_analytical(coord,etpl,ed,u); 
+            [L2(loop_count)] = L2_norm_nonanalytical(coord,etpl,ed,u); 
             
             % Error in DG norm --------------------------------------------
-            [DG(loop_count)] = DG_norm_calc_ele_analytical(u,etpl,ed,etpl_face,coord,E,v); 
+            [DG(loop_count)] = DG_norm_calc_ele_nonanalytical(u,etpl,ed,etpl_face,coord,E,v); 
       
             
             % 7: hp-adaptivity --------------------------------------------
@@ -141,8 +141,3 @@ while exit1==0
     exit1=1;
     
 end
-
-
-
-
-
