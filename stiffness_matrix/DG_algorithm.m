@@ -16,8 +16,6 @@ function [K,tndof,ed]=DG_algorithm(etpl,etpl_face,coord,E,v)
 %  Copyright (C) 2017 Robert Bird 
 %  $Revision: 1.0 $Date: 2017/06/11 17:09:20 $
 
-
-% Volumetric stiffness matrx
 [kval,krow,kcol,ed] = vol_int(coord,etpl,E,v);                             % Local volumetric stiffness calculation
 [k] = surf_int_new(coord,etpl,etpl_face,E,v,ed);                           % Local internal stiffness calculation
 [k_D]=surf_dirichlet(coord,etpl,etpl_face,E,v,ed);                         % Local Dirichlet BC external stiffness calculation

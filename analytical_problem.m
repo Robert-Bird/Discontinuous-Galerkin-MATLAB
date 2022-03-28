@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author: Thomas Wiltshire
 % Date:   15/08/2018
 % Description: Function to run a analytical problem (see documentation)
