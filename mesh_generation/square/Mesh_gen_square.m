@@ -15,7 +15,9 @@ function [etpl,coord,conn]=Mesh_gen_square(node,edge,BC)
 %  $Revision: 1.0 $Date: 2018/06/11 17:09:20 $
 
 hfun=0.1;                                                                  % Mesh size function argument (see Mesh2D documentation)
-[vert,conn,tria,~] = refine2(node,edge,[],[],hfun); 
+ws = warning('off','MATLAB:dispatcher:nameConflict');                      % quiet the Mesh2D size-shim shadow notice
+[vert,conn,tria,~] = refine2(node,edge,[],[],hfun);
+warning(ws);                                                               % restore previous warning state 
 conn = finding_the_boundary(conn,BC,tria,vert);
 etpl=tria;
 coord = vert;                                                              % Extracting nodal coordiantes data from text files

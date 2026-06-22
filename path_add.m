@@ -7,7 +7,7 @@
 % error_calculation/
 % mesh_generation/
 % mesh_generation/square/
-% Mesh2d/ - Comment in line 38 if Mesh2d is installed
+% Mesh2d/ - third-party (separate licence); auto-detected if added (see end)
 % norms/
 % plotters/
 % rhs/
@@ -28,7 +28,6 @@ addpath('boundary_conditions');
 addpath('error_calculation'); 
 addpath('mesh_generation');
 addpath('mesh_generation/square');
-%addpath(genpath('Mesh2d'));
 addpath('norms/');
 addpath('plotters');
 addpath('rhs');
@@ -41,3 +40,16 @@ addpath('stiffness_matrix/surface_matrix');
 addpath(genpath('problem_set_up'));
 addpath(genpath('tests'));
 addpath(genpath('example_problems'));
+
+% Mesh2D is third-party (separate licence) and is NOT shipped with this
+% project. If you have added a Mesh2d folder into the main directory, put it
+% (and its subfolders) on the path and install the size-compatibility shim
+% into Mesh2d/private so refine2 works on recent MATLAB. This affects Mesh2D
+% only; nothing here modifies a Mesh2D source file.
+if isfolder('Mesh2d')
+    ws = warning('off','MATLAB:dispatcher:nameConflict');   % quiet the install-time shadow notice only
+    addpath(genpath('Mesh2d'));
+    install_mesh2d_shim('Mesh2d');
+    warning(ws);                                            % restore previous warning state
+end
+end
