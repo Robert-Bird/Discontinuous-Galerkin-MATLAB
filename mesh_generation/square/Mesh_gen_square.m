@@ -1,5 +1,6 @@
 function [etpl,coord,conn]=Mesh_gen_square(node,edge,BC)
-% Mesh generation using Triangle c code
+% Mesh generation using triangle_mesh (a built-in MATLAB Delaunay-refinement
+% mesher; a port of the relevant behaviour of Shewchuk's Triangle)
 %
 % Input(s):
 % node     - Vertices of the desired domain (for mesh generation)
@@ -14,8 +15,8 @@ function [etpl,coord,conn]=Mesh_gen_square(node,edge,BC)
 %  Copyright (C) 2018 Robert Bird
 %  $Revision: 1.0 $Date: 2018/06/11 17:09:20 $
 
-hfun=0.1;                                                                  % Mesh size function argument (see Mesh2D documentation)
-[vert,conn,tria,~] = refine2(node,edge,[],[],hfun); 
+hfun=0.1;                                                                  % Target element size (max edge length)
+[vert,conn,tria] = triangle_mesh(node,edge,hfun);                          % Quality Delaunay mesh (built-in MATLAB port of Triangle)
 conn = finding_the_boundary(conn,BC,tria,vert);
 etpl=tria;
 coord = vert;                                                              % Extracting nodal coordiantes data from text files
