@@ -7,7 +7,7 @@
 % error_calculation/
 % mesh_generation/
 % mesh_generation/square/
-% Mesh2d/ - Uncomment line 31 if Mesh2d is installed (see README)
+% Mesh2d/ - Comment in line 38 if Mesh2d is installed
 % norms/
 % plotters/
 % rhs/

@@ -90,6 +90,7 @@ for i=0:max(etpl.tree(h_refine_temp,2))
             % Looping throught the three faces of the parent element
             for j=1:3
                 etpl_face_current_face = etpl_face_current_el(etpl_face_current_el(:,3)==j,:);
+                for t = size(etpl_face_current_face,1)
                     if size(etpl_face_current_face,1) == 1 % Both elements are initially the same size or an exterior
                         new_els = exterior(local_face_list(j,:));
                         etpl_face(etpl_face_counter+1,:)=[new_els(1),etpl_face_current_face(2:end)];
@@ -123,6 +124,7 @@ for i=0:max(etpl.tree(h_refine_temp,2))
                     elseif  size(etpl_face_current_face,1) > 2
                         fprintf('Error in mesh refinement check mesh_refine_topology_marking.m\n')
                     end
+                end
             end
             
             % Include the interior element to the new refinement

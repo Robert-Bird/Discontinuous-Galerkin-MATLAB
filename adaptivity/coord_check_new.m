@@ -25,7 +25,7 @@ coordt=coord(1:max_node,:);                                                % Tem
 new_nodes=zeros(3,2);                                                      % Creating a matric of new nodes
 new_node_count=0;                                                          % List of node numbers
 face_list=[2 3 1];                                                         % Refined element 4 parent face -> node numbers
-el_list=1:size(etpl.mat,1);                                                % List of elements in the mesh
+el_list=1:size(etpl.mat);                                                  % List of elements in the mesh
 
 % Rearrange etpl_face into a more convientient form for faces connected to
 % current parent element 'nel' in inputs, such that etpl_face_temp has the

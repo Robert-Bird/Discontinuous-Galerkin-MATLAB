@@ -34,7 +34,7 @@ while count~=size(BC,1)                                                    % If 
         end
     end
     
-    if numel(start_node)==1                                                % If only one of the nodes in conn(i,1:2) is an original node
+    if size(start_node)==1                                                 % If only one of the nodes in conn(i,1:2) is an original node
         faces_to_set=zeros(size(conn,1),1);                                % A vector to keep track of all the edges that are linked between two orginal node
         faces_to_set(i)=1;                                                 % Marking edge i as the first member in the chain
         exit = 0;ii=0;                                                     % Exit flag and counter through conn
